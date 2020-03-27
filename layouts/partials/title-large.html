@@ -1,0 +1,31 @@
+
+{% if frontmatter.title or frontmatter.author or frontmatter.version or frontmatter.date or description %}
+      <div class="details-large">
+{% if frontmatter.title %}
+            <div class="details-large-title">
+        {{ frontmatter.title }}
+             </div>
+{% endif %}
+{% if frontmatter.author %}
+            <div class="details-large-author">
+        {{ frontmatter.author }}
+            </div>
+{% endif %}
+{% if frontmatter.version %}
+            <div class="details-large-version">
+        version {{ frontmatter.version }}
+            </div>
+{% endif %}
+{% if frontmatter.date %}
+            <div class="details-large-date">
+        {{ frontmatter.date }}
+            </div>
+{% endif %}
+{% if description %}
+            <div class="details-large-description">
+    {{description}}
+            </div>
+{% endif %}
+        </div>
+{% endif %}
+

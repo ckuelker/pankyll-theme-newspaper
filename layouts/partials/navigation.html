@@ -1,0 +1,21 @@
+         <aside>
+{% if cfg.l10n  and cfg.l10n.languages %}
+    {% set n = 1 %}
+             <article>
+                 <header>
+    {% if cfg.toc and cfg.toc[language] and cfg.toc[language].text %}
+                     <h2>{{ cfg.toc[language].text }}</h2>
+    {% endif %}
+                 </header>
+    {% if cfg.navigation and cfg.navigation[language] %}
+                 <ol class="navigation">
+            {% for e in cfg.navigation[language] %}
+                   <li><dl class="nav"><dt><a href="{{cfg.site.url}}{{ e.link.url }}">{{ e.link.text }}</dt><dd><a href="{{ e.link.url }}">{{n}}</a></dd></dl></li>
+                {% set n = n + 1 %}
+            {% endfor %}
+               </ol>
+    {% endif %}
+             </article>
+
+{% endif %}
+        </aside>

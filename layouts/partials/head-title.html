@@ -1,0 +1,15 @@
+    <head>
+        <title>{{ title }}</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+{% if description %}
+        <meta name="description" content="{{ description }}">
+{% endif %}
+{% if keywords %}{% for keyword in keywords %}
+        <meta name="keyword" content="{{ keyword }}">
+{% endfor %}{% endif %}
+        <meta name="generator" content="{{ generator }}" />
+        <link rel="stylesheet" href="/css/default.css" type="text/css" media="all" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    </head>
+

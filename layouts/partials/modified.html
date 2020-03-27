@@ -1,0 +1,6 @@
+{% if git.Lastmod %}
+  <li>Last modified (via git): {{ git.Lastmod }}</li>
+{% elif frontmatter.date %}
+  <li>Last modified: {{ frontmatter.date }}</li>
+{% endif %}
+

@@ -1,0 +1,12 @@
+{% if cfg.footer and cfg.footer[language] and cfg.footer[language].copyright %}
+    <ul class="copyright">
+    {% for c in cfg.footer[language].copyright %}
+        <li class="copyright-item">
+        {{ c.text }}
+        {% if cfg.footer[language].license %}
+            <a class="copyright-link" href="{{cfg.site.url}}{{ cfg.footer[language].license.url }}">{{ cfg.footer[language].license.text }}</a>
+        {% endif %}
+        </li>
+    {% endfor %}
+    </ul>
+{% endif %}

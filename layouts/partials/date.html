@@ -1,0 +1,6 @@
+{% if git.Lastmod %}
+  <li>{{ git.Lastmod }}</li>
+{% elif frontmatter.date %}
+  <li>{{ frontmatter.date.strftime('%A, %B %d, %Y') }}</li>
+{% endif %}
+

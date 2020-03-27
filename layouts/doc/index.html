@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    {% include "partials/head.html" %}
+<body>
+    <div id="container">
+
+        <div id="header">
+{% include "partials/home.html" %}
+            <div class="description">
+{% if git %}
+    {{ git.Lastmod }} {{ git.Subject }} ({{ git.AbbreviatedHash }})
+{% elif frontmatter.date %}
+    {{ frontmatter.date.strftime('%A, %B %d, %Y') }}
+{% endif %}
+            </div>
+        </div>
+
+        <div id="breadcrumb">
+{% include "partials/breadcrumb.html" %}
+        </div>
+
+{% include "partials/title-large.html" %}
+
+{% include "partials/toc.html" %}
+
+{{ body }}
+
+{% if frontmatter.is_entity %}
+    {% if kw %}
+    <div class="keyword">
+       {%for obj in kw %}
+       <div class="keyword-item"><a class="keyword-link" href="{{ obj.url }}">{{obj.title}}</a></div>
+       {% endfor %}
+    </div>
+    {% endif %}
+{% endif %}
+{% if siblings %}
+    <hr>
+    <div class="siblings">
+      {% for obj in siblings %}
+      <div class="siblings-item"><a class="siblings-link" href="{{ obj.url }}">{{  obj.title  }}</a></div>
+      {% endfor %}
+    </div>
+{% endif %}
+
+{% include "partials/footer.html" %}
+
+        <div class="status">
+            <ul class="status">
+{% include "partials/pdfdownload.html" %}
+            </ul>
+        </div>
+{% include "partials/foot-script.html" %}
+    </body>
+</html>

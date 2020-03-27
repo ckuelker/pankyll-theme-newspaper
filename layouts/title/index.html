@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% if cfg.site.url and cfg.home and cfg.home[language] and cfg.home[language].url %}
+{%     set my_url  = cfg.site.url+cfg.home[language].url %}
+{% else %}
+{%     set my_url = '/en/' %}
+{% endif %}
+{% if cfg.description and cfg.description[language] and  cfg.description[language].text %}
+{%     set my_text = cfg.home[language].text %}
+{% else %}
+{%     set my_text = description %}
+{% endif %}
+<html>
+    {% include "partials/head-title.html" %}
+<body>
+    <div id="container">
+        <div id="header">
+            <h1><a class="title-link" href="{{my_url}}">{{title}}</a></h1>
+            <a href="{{my_url}}">
+            <div class="description">{{my_text}}</div>
+            </a>
+        </div>
+        <div class="details-small">
+          <ul class="status details-small">
+{% include "partials/date.html" %}
+{% include "partials/gitinfo.html" %}
+{% include "partials/pdfdownload.html" %}
+          </ul>
+        </div>
+        <section>
+           {{ body }}
+         </section>
+{% include "partials/navigation.html" %}
+
+{% include "partials/footer.html" %}
+
+        </div>
+    </body>
+</html>
+

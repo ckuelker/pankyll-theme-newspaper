@@ -1,0 +1,6 @@
+{% if git %}
+{% if git.Subject and git.AbbreviatedHash and git.Url %}
+<li><a href="{{ git.Url }}/{{ git.File }}">{{ git.Subject }} ({{ git.AbbreviatedHash }})</a></li>
+{% endif %}
+{% endif %}
+

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    {% include "partials/head.html" %}
+<body>
+    <div id="container">
+
+        <div id="header">
+{% include "partials/home.html" %}
+
+{% if frontmatter.date %}
+            <div class="description">{{ frontmatter.date.strftime('%A, %B %d, %Y') }}</div>
+{% else %}
+            <div class="description">{{ date }}</div>
+{% endif %}
+        </div>
+
+        <div id="breadcrumb">
+{% include "partials/breadcrumb.html" %}
+        </div>
+
+        <h2 class="blogtitle">{{title}}</h2>
+{% if description %}
+        <blockquote><p>{{description}}</p></blockquote>
+{% endif %}
+
+        <div class="details-small">
+          <ul class="details-small">
+{% include "partials/author.html" %}
+{% include "partials/date.html" %}
+{% include "partials/gitinfo.html" %}
+          </ul>
+        </div>
+
+{{ body }}
+
+{% include "partials/footer.html" %}
+
+        <div class="status">
+            <ul class="status">
+{% include "partials/pdfdownload.html" %}
+            </ul>
+        </div>
+{% include "partials/foot-script.html" %}
+    </body>
+</html>
+
