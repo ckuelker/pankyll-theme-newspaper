@@ -1,0 +1,533 @@
+/* === [ FONTS ] =========================================================== */
+@font-face {
+  font-family:'AlegreyaItalic';
+  src:local('AlegreyaItalic'), url(/font/alegreya/fonts/webfonts/Alegreya-Italic.woff) format('woff')
+}
+@font-face {
+  font-family:'Alegreya';
+  src:local('Alegreya'), url(/font/alegreya/fonts/webfonts/Alegreya-Regular.woff) format('woff')
+}
+
+body {
+    counter-reset: tcnt;
+}
+
+/* === [ BREADCRUM ] ======================================================= */
+ol.breadcrumb li {
+  display: inline;
+}
+ol.breadcrumb li+li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
+}
+
+.breadcrumb {
+  background-color: #ffffff;
+}
+.breadcrumb-link {
+  color: #000000;
+  text-decoration: none;
+}
+.breadcrumb-link:hover {
+  color: #ae3000;
+}
+
+/* === [ DETAILS LARGE ] =================================================== */
+.details-large {
+    margin:0;
+    text-align:center;
+    font-weight:normal;
+    font-style:normal;
+    margin-top: 1em;
+    margin-bottom: 2.2em;
+    background-color:#dddddd;
+    padding: 1.5em;
+}
+.details-large-title {
+    font:50px AlegreyaItalic;
+    font-size:3em;
+    margin-top: 1.4em;
+    margin-bottom: 1.4em;
+}
+.details-large-author {
+    font-size:2em;
+}
+.details-large-version {
+    font-style:oblique;
+    font-size:1.4em;
+}
+.details-large-date {
+    font-size:1.2em;
+    font-style:italic;
+}
+.details-large-description {
+    font-size:1.2em;
+    font-style:italic;
+    margin-top: 1.2em;
+}
+
+/* === [ DETAILS SMALL ] =================================================== */
+.details-small {
+    font-size: 1em;
+    color: #999999;
+    margin-top: 0pt;
+    margin-right: 0pt;
+    margin-bottom: 0pt;
+    margin-left: 0pt;
+}
+ul.details-small {
+  padding: 10px 16px;
+  list-style: none;
+}
+/* Display list items side by side */
+ul.details-small li {
+  display: inline;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+ul.details-small li+li:before {
+  padding: 8px;
+  color: black;
+  content: "|\00a0";
+}
+
+/* Add a color to all links inside the list */
+ul.details-small li a {
+  color: #0275d8;
+  text-decoration: none;
+}
+
+/* Add a color on mouse-over */
+ul.details-small li a:hover {
+  color: #01447e;
+  text-decoration: underline;
+}
+
+
+/* === [ AUTHOR ] ========================================================== */
+.authorby {
+    color:black;
+    font-weight:bold;
+}
+
+/* === [ TABLE ] =========================================================== */
+table {
+    border-collapse: collapse;
+    border-spacing: 0; /* IE 6 */
+    border-bottom: 2pt solid #000;
+    border-top: 2pt solid #000;
+    margin-left: auto;
+    margin-right: auto;
+    }
+thead { border-bottom: 1pt solid #000; background-color: #eee; }
+tr.header { }
+tbody { }
+tr  { }
+tr.odd:hover, tr.even:hover { background-color: #eee; }
+tr.odd {}
+tr.even {}
+td, th {
+    vertical-align: top; /* Word */
+    vertical-align: baseline; /* Others */
+    padding-left:   0.1em;
+    padding-right:  0.5em;
+    padding-top:    0.2em;
+    padding-bottom: 0.2em;
+    }
+th { font-weight: bold; }
+tfoot { }
+caption {
+    caption-side: top;
+    border: none;
+    font-size: 0.9em;
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 0.3em; /* Good for when on top */
+    padding-bottom: 0.2em;
+    }
+dl:not(.nav) {
+    border-top: 2pt solid black;
+    padding-top: 0.5em;
+    border-bottom: 2pt solid black;
+    }
+dt { font-weight: bold; }
+dd+dt { border-top: 1pt solid black; padding-top: 0.5em; }
+dd { margin-bottom: 0.5em; }
+dd+dd { border-top: 1px solid black; }
+
+/* basic */
+body {
+        background: #fff;
+        text-align:justify;
+        margin:0 auto 0 auto;
+        padding:0;
+        max-width:1200px;
+        line-height:1;
+        color:black;
+        font:11pt 'Alegreya';
+        vertical-align: baseline;
+        padding-top: 20px;
+        padding-bottom: 20px;
+}
+#header {
+        padding-top: 0pt;
+        padding-right: 1.5em;
+        padding-bottom: 0pt;
+        padding-left: 1.5em;
+        text-align: left;
+        border-bottom-width: 2px;
+        border-bottom-style: solid;
+        border-bottom-color: #ae3000;
+}
+#header div.description
+{
+        color: #999999;
+        text-transform: uppercase;
+        float: right;
+        margin-top: -1.5em;
+}
+#main {
+        padding-top: 2em;
+        padding-right: 1.5em;
+        padding-bottom: 1.5em;
+        padding-left: 1.5em;
+        margin-bottom: 1em;
+        border-bottom-width: 2px;
+        border-bottom-style: solid;
+        border-bottom-color: #ae3000;
+}
+#main .image
+{
+        border:rgba(0,0,0,0.5) 0px solid;
+        display:block;
+        overflow:hidden;
+        padding:5px;
+        position:relative;
+        vertical-align: top;
+}
+
+/*
+#main .image:hover { box-shadow:rgba(0,0,0,0.5) 0 0 20px; }
+*/
+
+#main .image .caption
+{
+        -moz-transition:margin-bottom;
+        -moz-transition-duration:.5s;
+        -moz-transition-timing-function:ease-in-out;
+        -webkit-transition:margin-bottom;
+        -webkit-transition-duration:.5s;
+        -webkit-transition-timing-function:ease-in-out;
+        background:rgba(0,0,0,0.5);
+        bottom:0;
+        color:rgba(255,255,255,1);
+        display:block;
+        font-size:11pt;
+        left:0;
+        margin-bottom:-100px;
+        padding:5px;
+        position:absolute;
+        transition:margin-bottom;
+        transition-duration:.5s;
+        transition-timing-function:ease-in-out;
+        width:179px;
+}
+#main .image:hover .caption { margin-bottom:0; }
+
+/* headdings */
+h1, h2, h3, h4, h5, h6 { page-break-after: avoid; }
+h1 { font:50pt 'AlegreyaItalic'; margin:0; }
+h2 {
+        font:50pt 'AlegreyaItalic';
+        font-size:1.8em;
+        text-align:left;
+        font-weight:normal;
+        font-style:normal;
+        border-top-width: 6px;
+        border-top-style: solid ;
+        border-top-color: #999999;
+        border-bottom-width: 3px;
+        border-bottom-style: solid;
+        border-bottom-color: #999999;
+}
+h3 {
+        text-align:left;
+        font-size:1.2em;
+        font-weight:bold;
+        line-height:1.1em;
+        font-style:italic;
+        margin-bottom: 1.4em;
+}
+h4 { font-size: 1em; line-height:1.5em; font-weight:normal; font-style:normal; }
+p { line-height: 1.5em; margin-bottom: 1.5em; }
+table { border-collapse:collapse; border-spacing:0; }
+
+.title {
+    color: #000000;
+    text-decoration: none;
+}
+.blogtitle {
+    font:30pt 'AlegreyaItalic'; margin:0;
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+    padding-top: 2em;
+}
+
+
+/* === [ NAVIGATION TABLE OF CONTENT ] ===================================== */
+/* see also NUMBERED LISTS */
+dl{clear:both;width:100%;overflow:hidden;background:#fff url(i/dot.png) repeat-x 0 0.8em}
+dt,dd{background:#fff}
+dt{float:left;padding-right:3px}
+dd{margin:0;float:right;padding-left:3px}
+ol{font:12pt 'Alegreya'; margin:0;padding:0;list-style:none}
+li ol{width:95%;padding-left:5%}
+
+/* columns */
+article header h2 { font-size:25pt; }
+header { display:block; text-align:center; }
+
+#container > header { border-bottom:rgba(4,99,128,1) 5px solid; margin-bottom:10px; }
+#container > header h1 { font:50pt 'AlegreyaItalic'; margin:0; }
+#container > header p { font-size:12pt; margin:0; padding:0; }
+#container
+{
+        /* -moz-box-shadow:rgba(0,0,0,0.5) 0 0 10px 5px; */
+        -webkit-box-shadow:rgba(0,0,0,0.5) 0 0 10px 5px;
+        background:#fff;
+        box-shadow:rgba(0,0,0,0.5) 0 0 10px 5px;
+        margin:0 auto;
+        padding:20px;
+        width:1000px;
+}
+
+#content { display:table; }
+
+section
+{
+        border-right:rgba(0,0,0,0.5) 1px solid;
+        display:table-cell;
+        padding-right:10px;
+        width:700px;
+}
+
+/*
+section article p
+*/
+
+/* sets all text column, without blockquote */
+:not(blockquote) > p
+{
+        -moz-column-gap:20px;
+        -moz-column-rule:rgba(102,102,102,1) 1px solid;
+        -moz-column-width:200px;
+        -webkit-column-gap:20px;
+        -webkit-column-rule:rgba(102,102,102,1) 1px solid;
+        -webkit-column-width:200px;
+        column-gap:20px;
+        column-rule:rgba(102,102,102,1) 1px solid;
+        column-width:200px;
+}
+
+#teaser article { font:11pt 'Alegreya'; }
+#teaser article header h2 { font-size:18pt; margin:0; text-align:left; }
+#teaser .image
+{
+        border:rgba(0,0,0,0.5) 1px solid;
+        display:block;
+        overflow:hidden;
+        padding:5px;
+        position:relative;
+}
+#teaser .image:hover { box-shadow:rgba(0,0,0,0.5) 0 0 20px; }
+
+#teaser .image .caption
+{
+        -moz-transition:margin-bottom;
+        -moz-transition-duration:.5s;
+        -moz-transition-timing-function:ease-in-out;
+        -webkit-transition:margin-bottom;
+        -webkit-transition-duration:.5s;
+        -webkit-transition-timing-function:ease-in-out;
+        background:rgba(0,0,0,0.5);
+        bottom:0;
+        color:rgba(255,255,255,1);
+        display:block;
+        font-size:12pt;
+        left:0;
+        margin-bottom:-100px;
+        padding:5px;
+        position:absolute;
+        transition:margin-bottom;
+        transition-duration:.5s;
+        transition-timing-function:ease-in-out;
+        width:100%;
+}
+#teaser .image:hover .caption { margin-bottom:0; }
+#teaser a { color:rgba(0,0,0,1); font-weight:bold; text-decoration:none; }
+#teaser a:before { content:"►"; }
+
+aside { display:table-cell; padding-left:10px; width:280px; }
+aside header h2 { font-size:18pt; font-style:italic; }
+/*article p { text-align:justify; text-indent:20px; text-justify:newspaper; }*/
+article p { text-align:justify; text-indent:20px;  }
+
+location {
+        float:left;
+        display:table-cell; padding:10px;
+        border-width: 2px;
+        border-style: solid;
+        border-color: #aaaaaa;
+        font-size:10pt;
+        background: #eeeeee;
+}
+
+
+/* === [ STATUS LINE ] ===================================================== */
+/* Style the list */
+ul.status {
+  padding-right: 16px;
+  list-style: none;
+}
+
+/* Display list items side by side */
+ul.status li {
+  display: inline;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+ul.status li+li:before {
+  padding-right: 8px;
+  color: black;
+  content: "|\00a0";
+}
+
+/* Add a color to all links inside the list */
+/*
+ul.status li a {
+  color: #0275d8;
+  text-decoration: none;
+}
+*/
+
+/* Add a color on mouse-over */
+/*
+ul.status li a:hover {
+  color: #01447e;
+  text-decoration: underline;
+}
+*/
+
+/* === [ LINKS ] =========================================================== */
+a {
+  color: #000000;
+  text-decoration: none;
+}
+a:hover {
+  color: #ae3000;
+}
+/* === [ NUMBERED LISTS ] ================================================= */
+/* this is wanted: http://localhost:8902/Pankyll/pankyll-features.en.html
+   however mit might collide with TOC feature
+*/
+ol li:not(.breadcrumb-item){
+    list-style-type: decimal;
+    padding-left:   .2em;
+}
+ol:not(.breadcrumb):not(.navigation){
+    padding-left:   4em;
+}
+ol.navigation {
+    padding-left:   1em;
+}
+ol.navigation li {
+    list-style-type: none;
+}
+
+/* === [ INLINE CODE ] ===================================================== */
+.code-inline {
+    background-color: rgba(0,0,0,.05);
+    font-size: 90%;
+    color: rgba(0,0,0,.9);
+    padding: .2em .4em;
+}
+
+/* === [ Feature: Table Of Contents ] ====================================== */
+#table-of-contents-container {
+    background: #f9f9f9 none repeat scroll 0 0;
+    border: 1px solid #aaa;
+    font-size: 95%;
+    margin-bottom: 1em;
+    padding: 20px;
+}
+.table-of-contents-title {
+    font-weight: 700;
+    text-align: center;
+}
+div.table-of-contents {
+
+}
+div.table-of-contents ul {
+    list-style: none;
+}
+div.table-of-contents ul li {
+    clear: both;
+    background: url(i/dot.png) repeat-x 0 0.8em;
+}
+div.table-of-contents ul li:after {
+}
+div.table-of-contents ul li a {
+    background: #f9f9f9;
+    padding-right: 1em;
+}
+div.table-of-contents ul li a:after {
+    float: right;
+    counter-increment: tcnt;
+    content: counter(tcnt);
+    overflow: hidden;
+    padding-left:1em;
+    background: #f9f9f9;
+}
+/* === [ Feature: Footer ] ================================================= */
+/* imprint */
+#index, #imprint {
+        text-align: right;
+        color: #999999;
+        font-size:10pt;
+}
+#index a, #imprint a{ color: #999999; font-weight:bold; text-decoration:none; }
+#index a:before, #imprint a:before { content:"►"; }
+/* footer */
+#footer {
+        margin-top: 2em;
+        border-top-width: 2px;
+        border-top-style: solid;
+        border-top-color: #ae3000;
+}
+.alignleft {
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+.alignright {
+    float: right;
+    margin: 0;
+    padding: 0;
+}
+.copyright {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.copyright-item {
+    font-size: 90%;
+    color: #999999;
+    text-align: left;
+}
+.copyright-link {
+    font-size: 90%;
+    color: #999999;
+}
+
+
