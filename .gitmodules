@@ -1,4 +1,4 @@
 [submodule "static/font/alegreya"]
-	path = static/font/alegreya
+	path = font/alegreya
 	url = https://github.com/huertatipografica/Alegreya.git
 	branch = master
