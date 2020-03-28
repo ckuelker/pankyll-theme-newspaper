@@ -1,15 +1,29 @@
+{% if cfg.l10n and cfg.l10n.default %}
+{%     set dftlng = cfg.l10n.default %}
+{% endif %}
+{% if cfg.l10n and toc and toc[language] and cfg.toc[language].text %}
+{%     set toc = cfg.toc[language].text %}
+{% elif cfg.toc and cfg.toc[dftlng] and cfg.toc[dftlng].text %}
+{%    set toc =  cfg.toc[dftlng].text %}
+{% endif %}
+{% if cfg.navigation and cfg.navigation[language] %}
+{%    set nav = cfg.navigation[language] %}
+{% elif cfg.navigation and cfg.navigation[dftlng] %}
+{%    set nav = cfg.navigation[dftlng] %}
+{% endif %}
+
          <aside>
-{% if cfg.l10n  and cfg.l10n.languages %}
+{% if cfg.navigation %}
     {% set n = 1 %}
              <article>
                  <header>
-    {% if cfg.toc and cfg.toc[language] and cfg.toc[language].text %}
-                     <h2>{{ cfg.toc[language].text }}</h2>
+    {% if toc %}
+                     <h2>{{ toc }}</h2>
     {% endif %}
                  </header>
-    {% if cfg.navigation and cfg.navigation[language] %}
+    {% if nav %}
                  <ol class="navigation">
-            {% for e in cfg.navigation[language] %}
+            {% for e in nav %}
                    <li><dl class="nav"><dt><a href="{{cfg.site.url}}{{ e.link.url }}">{{ e.link.text }}</dt><dd><a href="{{ e.link.url }}">{{n}}</a></dd></dl></li>
                 {% set n = n + 1 %}
             {% endfor %}
