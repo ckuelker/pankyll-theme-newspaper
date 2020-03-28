@@ -4,4 +4,12 @@ author:  Christian Külker
 copyright:
  - "2020, by Christian Külker"
 license: GPLv3
-version: 0.1.0
+version: 0.1.1
+
+# Add single static files (to avoid copy over a git repository to the server)
+# This is only needed for themes that uses git sub-modules, if your themes
+# distributes fonts directly, just copy them into the static directory
+static:
+    font/alegreya/fonts/webfonts/Alegreya-Italic.woff: font/alegreya/fonts/webfonts/Alegreya-Italic.woff
+    font/alegreya/fonts/webfonts/Alegreya-Regular.woff: font/alegreya/fonts/webfonts/Alegreya-Regular.woff
+

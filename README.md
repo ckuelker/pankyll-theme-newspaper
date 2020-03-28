@@ -1,7 +1,7 @@
 ---
 title:  pankyll-theme-newspaper/README.md
 author: Christian Külker
-date:   2020-03-22
+date:   2020-03-28
 
 ---
 
@@ -20,9 +20,10 @@ text in columns.
 
 # Changes
 
-Version: Date       Author           Notes
--------- ---------- ---------------- ------------------------------------------
-0.1.0    2020-03-22 Christian Külker initial release
+| Version | Date       | Author           | Notes                             |
+| ------- | ---------- |----------------- | --------------------------------- |
+| 0.1.1   | 2020-03-28 | Christian Külker | change font location              |
+| 0.1.0   | 2020-03-22 | Christian Külker | initial release                   |
 
 # Introduction
 
