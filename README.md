@@ -22,16 +22,23 @@ text in columns.
 
 | Version | Date       | Author           | Notes                             |
 | ------- | ---------- |----------------- | --------------------------------- |
-| 0.1.1   | 2020-03-28 | Christian Külker | change font location              |
+| 0.1.2   | 2020-03-28 | Christian Külker | improve imprint, README.md,       |
+|         |            |                  | navigation                        |
+| 0.1.1   | 2020-03-28 | Christian Külker | change font location, .gitmodules |
 | 0.1.0   | 2020-03-22 | Christian Külker | initial release                   |
 
 # Introduction
 
-Newspapers are easy to read.  The aim of the `pankyll` theme newspaper  is to
-give a newspaper like experience by providing a theme with text displayed in
-columns.
+Newspapers are easy to read. The aim of the `pankyll` theme newspaper is to
+give a newspaper like experience by providing a theme with sparse colored text
+in an easy to read font displayed in columns. The theme is also well suited for
+printing. It has three types of pages: title, blog and doc.
 
 # Installation
+
+Consider using the `pankyll-theme-newspaper-example` skeleton to test out the
+theme or to start a new site. However the installation by itself is just
+cloning the theme into the `themes` directory.
 
 ```bash
 cd  project/themes
