@@ -4,7 +4,7 @@ author:  Christian Külker
 copyright:
  - "2020, by Christian Külker"
 license: GPLv3
-version: 0.1.1
+version: 0.1.2
 
 # Add single static files (to avoid copy over a git repository to the server)
 # This is only needed for themes that uses git sub-modules, if your themes
