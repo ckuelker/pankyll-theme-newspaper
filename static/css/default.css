@@ -113,6 +113,7 @@ ul.details-small li a:hover {
 
 /* === [ TABLE ] =========================================================== */
 table {
+    min-width: 80%;
     border-collapse: collapse;
     border-spacing: 0; /* IE 6 */
     border-bottom: 2pt solid #000;
@@ -261,7 +262,7 @@ h3 {
 }
 h4 { font-size: 1em; line-height:1.5em; font-weight:normal; font-style:normal; }
 p { line-height: 1.5em; margin-bottom: 1.5em; }
-table { border-collapse:collapse; border-spacing:0; }
+/*table { border-collapse:collapse; border-spacing:0; }*/
 
 .title {
     color: #000000;
