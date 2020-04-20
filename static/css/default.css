@@ -535,8 +535,19 @@ div.table-of-contents ul li a:after {
   grid-template-columns: repeat(auto-fill,minmax(160px, 1fr));
 }
 .cards-item {
-  border: 1px solid green;
+  border: 1px solid #ae3000;
   margin: 1em;
   padding: 0.5em;
+}
+.cards-title {
+  text-align:left;
+  font-size:1.2em;
+  font-weight:bold;
+  line-height:1.1em;
+  font-style:italic;
+  margin-bottom: 1.4em;
+}
+.cards-description {
+    color: #999999;
 }
 
