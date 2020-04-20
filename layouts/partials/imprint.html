@@ -1,11 +1,3 @@
-{% if cfg.imprint %}
-    {% if cfg.imprint[language] %}
-        {% set im = cfg.imprint[language] %}
-    {% elif cfg.imprint[cfg.l10n.default] %}
-        {% set im = cfg.imprint[cfg.l10n.default] %}
-    {% endif %}
-    {% if has_imprint and im and im.url and im.text %}
-        <div id='imprint'><a href="{{cfg.site.url}}{{im.url}}">{{im.text}}</a></div>
-    {% endif %}
+{% if has_imprint and imprint_url and imprint_text %}
+        <div id='imprint'><a href="{{ imprint_url }}">{{ imprint_text }}</a></div>
 {% endif %}
-
