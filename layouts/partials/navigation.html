@@ -30,12 +30,16 @@
                </ol>
     {% endif %}
              </article>
-{% if siblings and frontmatter.list %}             
+    {% if siblings and frontmatter.list %}
              <article>
-{% include "partials/list-siblings.html" %}
+                 <ol class="navigation">
+          {% for obj in siblings %}
+                   <li><dl class="nav"><dt><a href="{{ obj.url}}">{{ obj.title }}</dt><dd><a href="{{ obj.url }}">{{n}}</a></dd></dl></li>
+                {% set n = n + 1 %}
+          {% endfor %}
+                 </ol>
             </article>
-{% endif %}
-
+    {% endif %}
 
 {% endif %}
         </aside>
