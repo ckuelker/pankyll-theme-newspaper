@@ -34,14 +34,8 @@
     </div>
     {% endif %}
 {% endif %}
-{% if siblings %}
-    <hr>
-    <div class="siblings">
-      {% for obj in siblings %}
-      <div class="siblings-item"><a class="siblings-link" href="{{ obj.url }}">{{  obj.title  }}</a></div>
-      {% endfor %}
-    </div>
-{% endif %}
+
+{% include "partials/list-siblings.html" %}
 
 {% include "partials/footer.html" %}
 
