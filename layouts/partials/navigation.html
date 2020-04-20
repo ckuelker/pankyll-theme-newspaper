@@ -1,13 +1,13 @@
 {% if cfg.l10n and cfg.l10n.default %}
 {%     set dftlng = cfg.l10n.default %}
 {% endif %}
-{% if cfg.l10n and toc and toc[language] and cfg.toc[language].text %}
-{%     set toc = cfg.toc[language].text %}
+{% if cfg.l10n and toc and toc[locale] and cfg.toc[locale].text %}
+{%     set toc = cfg.toc[locale].text %}
 {% elif cfg.toc and cfg.toc[dftlng] and cfg.toc[dftlng].text %}
 {%    set toc =  cfg.toc[dftlng].text %}
 {% endif %}
-{% if cfg.navigation and cfg.navigation[language] %}
-{%    set nav = cfg.navigation[language] %}
+{% if cfg.navigation and cfg.navigation[locale] %}
+{%    set nav = cfg.navigation[locale] %}
 {% elif cfg.navigation and cfg.navigation[dftlng] %}
 {%    set nav = cfg.navigation[dftlng] %}
 {% endif %}

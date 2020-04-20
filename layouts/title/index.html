@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-{% if cfg.site.url and cfg.home and cfg.home[language] and cfg.home[language].url %}
-{%     set my_url  = cfg.site.url+cfg.home[language].url %}
+{% if cfg.site.url and cfg.home and cfg.home[locale] and cfg.home[locale].url %}
+{%     set my_url  = cfg.site.url+cfg.home[locale].url %}
 {% else %}
 {%     set my_url = '/en/' %}
 {% endif %}
-{% if cfg.description and cfg.description[language] and  cfg.description[language].text %}
-{%     set my_text = cfg.home[language].text %}
+{% if cfg.description and cfg.description[locale] and  cfg.description[locale].text %}
+{%     set my_text = cfg.home[locale].text %}
 {% else %}
 {%     set my_text = description %}
 {% endif %}

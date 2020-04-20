@@ -1,7 +1,7 @@
 {% if not frontmatter.toc_hide and toc %}
 <div class="table-of-contents" id="table-of-contents-container">
-    {% if cfg.toc[language].text %}
-    <strong>{{ cfg.toc[language].text }}</strong>
+    {% if cfg.toc[locale].text %}
+    <strong>{{ cfg.toc[locale].text }}</strong>
     {% endif %}
 {{ toc }}
 </div>
