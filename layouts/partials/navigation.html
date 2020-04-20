@@ -12,6 +12,8 @@
 {%    set nav = cfg.navigation[dftlng] %}
 {% endif %}
 
+{% set n = ['1'] %}
+
          <aside>
 {% if cfg.navigation %}
     {% set n = 1 %}
@@ -24,18 +26,21 @@
     {% if nav %}
                  <ol class="navigation">
             {% for e in nav %}
-                   <li><dl class="nav"><dt><a href="{{cfg.site.url}}{{ e.link.url }}">{{ e.link.text }}</dt><dd><a href="{{ e.link.url }}">{{n}}</a></dd></dl></li>
-                {% set n = n + 1 %}
+                   <li><dl class="nav"><dt><a href="{{cfg.site.url}}{{ e.link.url }}">{{ e.link.text }}</dt><dd><a href="{{cfg.site.url}}{{ e.link.url }}">{{n|length}}</a></dd></dl></li>
+                {% if n.append('1') %}{% endif %}
             {% endfor %}
                </ol>
     {% endif %}
              </article>
     {% if siblings and frontmatter.list %}
+                 <header>
+                   <h2>{{ title }} ...</h2>
+                 </header>
              <article>
                  <ol class="navigation">
           {% for obj in siblings %}
-                   <li><dl class="nav"><dt><a href="{{ obj.url}}">{{ obj.title }}</dt><dd><a href="{{ obj.url }}">{{n}}</a></dd></dl></li>
-                {% set n = n + 1 %}
+                   <li><dl class="nav"><dt><a href="{{ obj.url}}">{{ obj.title }}</dt><dd><a href="{{ obj.url }}">{{n|length}}</a></dd></dl></li>
+                {% if n.append('1') %}{% endif %}
           {% endfor %}
                  </ol>
             </article>
