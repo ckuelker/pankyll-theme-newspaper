@@ -6,13 +6,17 @@
 
         <div id="header">
 {% include "partials/home.html" %}
-            <div class="description">
+            <a href="{{cfg.site.url}}{{home_url}}">
+                <div class="description">
 {% if git %}
     {{ git.Lastmod }} {{ git.Subject }} ({{ git.AbbreviatedHash }})
 {% elif frontmatter.date %}
     {{ frontmatter.date.strftime('%A, %B %d, %Y') }}
+{% else %}
+    {{ date }}
 {% endif %}
-            </div>
+                </div>
+            </a>
         </div>
 
         <div id="breadcrumb">
