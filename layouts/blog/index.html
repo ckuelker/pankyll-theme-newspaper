@@ -6,12 +6,15 @@
 
         <div id="header">
 {% include "partials/home.html" %}
-
+            <a href="{{cfg.site.url}}{{home_url}}">
+                <div class="description">
 {% if frontmatter.date %}
-            <div class="description">{{ frontmatter.date.strftime('%A, %B %d, %Y') }}</div>
+    {{ frontmatter.date.strftime('%A, %B %d, %Y') }}
 {% else %}
-            <div class="description">{{ date }}</div>
+    {{ date }}
 {% endif %}
+                </div>
+            </a>
         </div>
 
         <div id="breadcrumb">
