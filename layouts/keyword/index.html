@@ -1,4 +1,13 @@
 <!DOCTYPE html>
+{% if git %}
+    set my_text="{{ git.Lastmod }} {{ git.Subject }} ({{ git.AbbreviatedHash }})"
+{% elif frontmatter.date %}
+    set_my_text="{{ frontmatter.date.strftime('%A, %B %d, %Y') }}"
+{% elif cfg.description and cfg.description[locale] and  cfg.description[locale].text %}
+{%     set my_text = cfg.home[locale].text %}
+{% else %}
+{%     set my_text = description %}
+{% endif %}
 <html>
     {% include "partials/head.html" %}
 <body>
@@ -6,13 +15,9 @@
 
         <div id="header">
 {% include "partials/home.html" %}
-            <div class="description">
-{% if git %}
-    {{ git.Lastmod }} {{ git.Subject }} ({{ git.AbbreviatedHash }})
-{% elif frontmatter.date %}
-    {{ frontmatter.date.strftime('%A, %B %d, %Y') }}
-{% endif %}
-            </div>
+            <a href="{{my_url}}">
+            <div class="description">{{my_text}}</div>
+            </a>
         </div>
 
         <div id="breadcrumb">
