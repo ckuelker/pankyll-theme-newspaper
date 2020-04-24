@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 {% if git %}
-    set my_text="{{ git.Lastmod }} {{ git.Subject }} ({{ git.AbbreviatedHash }})"
+{%   set my_text="git.Lastmod git.Subject (git.AbbreviatedHash)" %}
 {% elif frontmatter.date %}
-    set_my_text="{{ frontmatter.date.strftime('%A, %B %d, %Y') }}"
+{%  set_my_text="frontmatter.date.strftime('%A, %B %d, %Y')" %}
 {% elif cfg.description and cfg.description[locale] and  cfg.description[locale].text %}
 {%     set my_text = cfg.home[locale].text %}
 {% else %}
-{%     set my_text = description %}
+{%     set my_text = date %}
 {% endif %}
 <html>
     {% include "partials/head.html" %}
