@@ -1,16 +1,15 @@
 ---
 title:  pankyll-theme-newspaper/README.md
 author: Christian Külker
-date:   2020-03-28
+date:   2020-04-24
 
 ---
 
 # Abstract
 
-This document describes briefly the aim and content for
-`pankyll-theme-newspaper`. The goal of `pankyll-theme-newspaper` is to provide
-an easy to read newspaper like experience by providing a `pankyll` theme with
-text in columns.
+This document describes briefly the aim and content of the
+`pankyll-theme-newspaper` repository. The goal is to provide an easy to read
+newspaper like experience by providing a [Pankyll] theme with text in columns.
 
 ![Github license](https://img.shields.io/github/license/ckuelker/pankyll-theme-newspaper.svg)
 ![Github issues](https://img.shields.io/github/issues/ckuelker/pankyll-theme-newspaper.svg?style=popout-square)
@@ -22,21 +21,22 @@ text in columns.
 
 | Version | Date       | Author           | Notes                             |
 | ------- | ---------- |----------------- | --------------------------------- |
-| 0.1.2   | 2020-03-28 | Christian Külker | improve imprint, README.md,       |
+| 0.1.3   | 2020-04-24 | Christian Külker | Changes to support latest pankyll |
+| 0.1.2   | 2020-03-28 | Christian Külker | Improve imprint, README.md,       |
 |         |            |                  | navigation                        |
-| 0.1.1   | 2020-03-28 | Christian Külker | change font location, .gitmodules |
-| 0.1.0   | 2020-03-22 | Christian Külker | initial release                   |
+| 0.1.1   | 2020-03-28 | Christian Külker | Change font location, .gitmodules |
+| 0.1.0   | 2020-03-22 | Christian Külker | Initial release                   |
 
 # Introduction
 
-Newspapers are easy to read. The aim of the `pankyll` theme newspaper is to
+Newspapers are easy to read. The aim of the [Pankyll] theme newspaper is to
 give a newspaper like experience by providing a theme with sparse colored text
 in an easy to read font displayed in columns. The theme is also well suited for
 printing. It has three types of pages: title, blog and doc.
 
 # Installation
 
-Consider using the `pankyll-theme-newspaper-example` skeleton to test out the
+Consider using the [pankyll-theme-newspaper-example] skeleton to test out the
 theme or to start a new site. However the installation by itself is just
 cloning the theme into the `themes` directory.
 
@@ -90,4 +90,6 @@ git clone --recursive https://github.com/ckuelker/pankyll-theme-newspaper.git
     WITH ANY OTHER SOFTWARE), EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN
     ADVISED OF THE POSSIBILITY OF SUCH DAMAGES
 
+[Pankyll]: https://www.pankyll.org/
+[pankyll-theme-newspaper-example]: https://github.com/ckuelker/pankyll-theme-newspaper/
 
