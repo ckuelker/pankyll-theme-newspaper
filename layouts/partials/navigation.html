@@ -19,7 +19,8 @@
              <article>
                  <header>
     {% if toc %}
-                     <h2>{{ toc_text }}</h2>
+                     <!--<h2>{{ toc_text }}</h2>-->
+                     <h2>Agenda</h2>
     {% endif %}
                  </header>
     {% if nav %}
@@ -31,24 +32,60 @@
                </ol>
     {% endif %}
              </article>
-    {% if top10_list and cfg.feature.top10 and ( frontmatter.top10 or cfg.default.top10_right ) %}
+
+<!-- We want to print siblings for the title page put not for: categories, tags and keywords -->
+<!-- Tags/index.md is 'type: title' and 'list: True' -->
+<!-- Tags/KEYWORD.md is 'type: keyword' ' -->
+{% if siblings and type == 'title' and not ( type == 'keyword' or frontmatter.list )  %}
              <article>
                      <header>
                              <h2>
-                                     Latest:
+      Main Topics
                              </h2>
                      </header>
-                     <ul class="td-sidebar-nav-list">
-                     {% for obj in top10_list %}
-                             <li class="td-sitebar-nav-list-item">
-                                     <a class="list-item-link" href="{{ obj.url }}">{{  obj.title  }} ({{ obj.date }})</a>
-                             </li>
-                      {% endfor %}
-                      </ul>
+                     <ol class="navigation">
+            {% for obj in siblings %}
+                             <li><dl class="nav"><dt><a href="{{ obj.url}}">{{ obj.title }}</dt><dd><a href="{{ obj.url }}">{{n|length}}</a></dd></dl></li>
+                {% if n.append('1') %}{% endif %}
+            {% endfor %}
+                     </ol>
              </article>
-    {% endif %}
+{% endif %}
 
-    {% if siblings and frontmatter.list %}
+{% if git %}
+             <article>
+                     <header>
+                             <h2>
+      Git
+                             </h2>
+                     </header>
+            <ul>
+              <li><a class="tag-link" href="{{ git.UrlBlob }}"><i class="fab fa-github fa-fw"></i>AAXXXXXXX("View latest on Github")ZZ</a></li>
+              <li><a class="tag-link" href="{{ git.UrlEdit }}"><i class="fa fa-edit fa-fw"></i>AAXXXXXXX("Edit this page")ZZ</a></li>
+              <li><a class="tag-link" href="{{ git.UrlCommit }}"><i class="fab fa-git-alt fa-fw"></i>AAXXXXXXX("View commit on Github")ZZ</a></li>
+              <li><a class="tag-link" href="{{ repo.url }}/issues/new?title=Documentation"><i class="fa fa-book fa-fw"></i>AAXXXXXXX("Create documentation issue")ZZ</a></li>
+              <li><a class="tag-link" href="{{ repo.url }}/issues/new"><i class="fas fa-tasks fa-fw"></i>AAXXXXXXX("Create project issue")ZZ</a></li>
+            </ul>
+             </article>
+{% endif %}
+
+    <!--- Latest -->
+    {% if top10_list and cfg.feature.top10 and ( frontmatter.top10 or cfg.default.top10_right ) %}
+             <article>
+                     <header>
+                             <h2>Latest:</h2>
+                     </header>
+                     <ol class="navigation">
+      {% for obj in top10_list %}
+                       <li><dl class="nav"><dt><a href="{{ obj.url }}">{{ obj.title  }}</a></dt><dd><a href="{{ obj.url }}">{{n|length}}</a></dd></dl></li>
+                {% if n.append('1') %}{% endif %}
+      {% endfor %}
+      </ol>
+             </article>
+      {% endif %}
+
+    <!-- There is no page matching this condition: doc can have list, but doc has no right side bar -->
+    {% if siblings and frontmatter.list and not ( type == 'title' ) %}
                  <header>
                    <h2>{{ title }} ...</h2>
                  </header>
