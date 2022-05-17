@@ -318,7 +318,7 @@ section article p
 */
 
 /* sets all text column, without blockquote */
-:not(blockquote) > p
+:not(blockquote) > p, .siblings
 {
         -moz-column-gap:20px;
         -moz-column-rule:rgba(102,102,102,1) 1px solid;
@@ -424,6 +424,8 @@ ul.status li a:hover {
 a {
   color: #000000;
   text-decoration: none;
+  font-weight: bold;
+
 }
 a:hover {
   color: #ae3000;
