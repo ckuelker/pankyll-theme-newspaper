@@ -60,11 +60,11 @@
                              </h2>
                      </header>
             <ul>
-              <li><a class="tag-link" href="{{ git.UrlBlob }}"><i class="fab fa-github fa-fw"></i>AAXXXXXXX("View latest on Github")ZZ</a></li>
-              <li><a class="tag-link" href="{{ git.UrlEdit }}"><i class="fa fa-edit fa-fw"></i>AAXXXXXXX("Edit this page")ZZ</a></li>
-              <li><a class="tag-link" href="{{ git.UrlCommit }}"><i class="fab fa-git-alt fa-fw"></i>AAXXXXXXX("View commit on Github")ZZ</a></li>
-              <li><a class="tag-link" href="{{ repo.url }}/issues/new?title=Documentation"><i class="fa fa-book fa-fw"></i>AAXXXXXXX("Create documentation issue")ZZ</a></li>
-              <li><a class="tag-link" href="{{ repo.url }}/issues/new"><i class="fas fa-tasks fa-fw"></i>AAXXXXXXX("Create project issue")ZZ</a></li>
+              <li><a class="tag-link" href="{{ git.UrlBlob }}"><i class="fab fa-github fa-fw"></i>View latest on Github</a></li>
+              <li><a class="tag-link" href="{{ git.UrlEdit }}"><i class="fa fa-edit fa-fw"></i>Edit this page</a></li>
+              <li><a class="tag-link" href="{{ git.UrlCommit }}"><i class="fab fa-git-alt fa-fw"></i>View commit on Github</a></li>
+              <li><a class="tag-link" href="{{ repo.url }}/issues/new?title=Documentation"><i class="fa fa-book fa-fw"></i>Create documentation issue</a></li>
+              <li><a class="tag-link" href="{{ repo.url }}/issues/new"><i class="fas fa-tasks fa-fw"></i>Create project issue</a></li>
             </ul>
              </article>
 {% endif %}
@@ -73,7 +73,7 @@
     {% if top10_list and cfg.feature.top10 and ( frontmatter.top10 or cfg.default.top10_right ) %}
              <article>
                      <header>
-                             <h2>Latest:</h2>
+                             <h2>Latest</h2>
                      </header>
                      <ol class="navigation">
       {% for obj in top10_list %}
