@@ -31,6 +31,23 @@
                </ol>
     {% endif %}
              </article>
+    {% if top10_list and cfg.feature.top10 and ( frontmatter.top10 or cfg.default.top10_right ) %}
+             <article>
+                     <header>
+                             <h2>
+                                     Latest:
+                             </h2>
+                     </header>
+                     <ul class="td-sidebar-nav-list">
+                     {% for obj in top10_list %}
+                             <li class="td-sitebar-nav-list-item">
+                                     <a class="list-item-link" href="{{ obj.url }}">{{  obj.title  }} ({{ obj.date }})</a>
+                             </li>
+                      {% endfor %}
+                      </ul>
+             </article>
+    {% endif %}
+
     {% if siblings and frontmatter.list %}
                  <header>
                    <h2>{{ title }} ...</h2>
