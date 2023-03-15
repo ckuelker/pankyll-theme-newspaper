@@ -3,13 +3,14 @@ url:     https://github.com/ckuelker/pankyll-theme-newspaper
 author:  Christian Külker
 copyright:
  - "2020, by Christian Külker"
+ - "2022, by Christian Külker"
+ - "2023, by Christian Külker"
 license: GPLv3
-version: 0.1.3
+version: 0.1.5
 
-# Add single static files (to avoid copy over a git repository to the server)
-# This is only needed for themes that uses git sub-modules, if your themes
-# distributes fonts directly, just copy them into the static directory
+# Add individual static files (to avoid copying via a git repository to the
+# server) This is only needed for themes that use git submodules, if your theme
+# distributes fonts directly, just copy them into the static directory.
 static:
     font/alegreya/fonts/webfonts/Alegreya-Italic.woff: font/alegreya/fonts/webfonts/Alegreya-Italic.woff
     font/alegreya/fonts/webfonts/Alegreya-Regular.woff: font/alegreya/fonts/webfonts/Alegreya-Regular.woff
-
